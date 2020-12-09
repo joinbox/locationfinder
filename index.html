@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Location Search</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        section {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+        /* .selected kann auch auf einem anderen Element sein – könnt ihr gern anpassen */
+        button.selected {
+            background-color: lightsalmon;
+        }
+        address {
+            display: none;
+        }
+        /* .selected kann auch auf einem anderen Element sein – könnt ihr gern anpassen */
+        address {
+            display: block;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Location Search</h1>
+    <section>
+        <select>
+            <!-- Selected defines our preselection – not the JavaScript-->
+            <option value="biel">Biel</option>
+            <option value="bern" selected>Bern</option>
+        </select>
+    </section>
+    <section>
+        <button>Biel</button>
+        <button>Bern</button>
+    </section>
+    <section>
+        <address>RUAG Biel</address>
+        <address>RUAG Bern</address>
+    </section>
+</body>
+</html>
