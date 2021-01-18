@@ -48,7 +48,7 @@ export default class LocationFinder extends HTMLElement {
 
     changeSelect() {
         const select = this.locationSelect.querySelector('select');
-        select.value = this.locationValue;
+        requestAnimationFrame(() => select.value = this.locationValue);
     }
 
     selectElement(element) {
