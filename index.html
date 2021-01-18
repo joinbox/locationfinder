@@ -37,6 +37,7 @@
 </head>
 <body>
     <h1>Location Search</h1>
+    <location-finder>
         <section>
             <location-select>
                 <select>
@@ -61,6 +62,36 @@
             </location-address>
             
         </section>
+    </location-finder>
+
+
+    <h1>Location Search</h1>
+    <location-finder>
+        <section>
+            <location-select>
+                <select>
+                    <!-- Selected defines our preselection – not the JavaScript-->
+                    <option value="biel">Biel</option>
+                    <option value="bern" selected>Bern</option>
+                </select>
+            </location-select>
+            
+        </section>
+        <section>
+            <location-buttons>
+                <button value="biel">Biel</button>
+                <button data-is-selected="true" value="bern">Bern</button>
+            </location-buttons>
+            
+        </section>
+        <section>
+            <location-address>
+                <address data-location="biel">RUAG Biel</address>
+                <address data-location="bern" data-is-selected="true">RUAG Bern</address>
+            </location-address>
+            
+        </section>
+    </location-finder>
     
     <script type="module" src="index.js"></script>
     </body>

@@ -6,8 +6,7 @@ export default class LocationButtons extends HTMLElement {
     }
 
     connectedCallback() {
-        this.setupEventListener();
-        this.handleChangeLocationButton();        
+        this.setupEventListener();   
     }
 
     setupEventListener() {
@@ -19,29 +18,8 @@ export default class LocationButtons extends HTMLElement {
         });
     }
 
-    handleChangeLocationButton() {
-        window.addEventListener('changelocationbutton', (ev) => {
-            for (const button of this.locationButtons) {
-                if (button.value === ev.detail) {
-                    this.selectButton(button);
-                } else {
-                    this.deselectButton(button);
-                }
-            }
-        });
-    }
-
     handleChange() {
         const detail = this.locationValue;
-        this.dispatchEvent(new CustomEvent('changelocationselect', { detail, bubbles: true }));
-        this.dispatchEvent(new CustomEvent('changelocationaddress', { detail, bubbles: true }));
-    }
-
-    selectButton(button) {
-        requestAnimationFrame(() => button.dataset.isSelected = true);
-    }
-
-    deselectButton(button) {
-        requestAnimationFrame(() => button.dataset.isSelected = false);
+        this.dispatchEvent(new CustomEvent('changelocation', { detail, bubbles: true } ));
     }
 }
