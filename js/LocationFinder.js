@@ -27,22 +27,14 @@ export default class LocationFinder extends HTMLElement {
     changeAddress() {
         const addresses = this.locationAddress.querySelectorAll('address');
         for (const address of addresses) {
-            if (address.dataset.location === this.locationValue) {
-                this.selectElement(address);
-            } else {
-                this.deselectElement(address);
-            }
+            address.dataset.location === this.locationValue ? this.selectElement(address) : this.deselectElement(address);
         }
     }
 
     changeButtons() {
         const buttons = this.locationButtons.querySelectorAll('button');
         for (const button of buttons) {
-            if (button.value === this.locationValue) {
-                this.selectElement(button);
-            } else {
-                this.deselectElement(button);
-            }
+            button.value === this.locationValue ? this.selectElement(button) : this.deselectElement(button);
         }
     }
 
